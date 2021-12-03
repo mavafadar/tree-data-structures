@@ -10,6 +10,9 @@ enum NodeColor {
     Black,
 }
 
+//type Tree<T>= Rc<RefCell<TreeNode<T>>>;
+//type RedBlackTree<T>= Option<Tree<T>>;
+// In order to reuse the code, we change the struct name
 type RcRefcellRBTNode<T> = Rc<RefCell<RBTreeNode<T>>>;
 type OptionNode<T> = Option<RcRefcellRBTNode<T>>;
 
@@ -521,7 +524,9 @@ impl<T: Ord + Copy + Debug> Tree<T, RBTreeNode<T>> for RBTree<T> {
     fn delete(&mut self, value: T) {
         let (flag, searched_node) = self.search(value);
         match flag {
-            false => (),
+            false => {
+                println!("The node of value: {:#?} doesn't exist.",value);
+            }
             true => {
                 let mut searched_node_ref: &RcRefcellRBTNode<T> = searched_node.as_ref().unwrap();
                 let _ = self._delete_private(&mut searched_node_ref);

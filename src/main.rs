@@ -1,5 +1,6 @@
 mod avltree;
 mod rbtree;
+mod bstree;
 mod base;
 
 use crate::base::{TreeNode, Tree};
@@ -14,12 +15,11 @@ fn main() {
     tree.insert(6);
     tree.insert(7);
     tree.insert(8);
-    tree.delete(8);
-    tree.delete(5);
-    println!("The number of leaves: {}", tree.count_leaves());
-    println!("The height of tree: {}", tree.get_height());
-    println!("The tree is empty? {}", tree.is_empty());
-    tree.traverse_inorder();
-    println!();
-    tree.print_tree();
+    tree.delete(9);
+    //println!("The number of leaves: {}", tree.count_leaves());
+    //println!("The height of tree: {}", tree.get_height());
+    //println!("The tree is empty? {}", tree.is_empty());
+    //tree.traverse_inorder();
+    //println!();
+    //tree.print_tree();
 }
