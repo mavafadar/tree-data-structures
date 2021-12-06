@@ -9,7 +9,7 @@ use rbtree::RBTreeNode;
 
 fn main() {
     let mut tree = RBTree::new();
-    let v=vec![1,2,3,4,5,6,7];
+    let v=vec![8, 18, 5, 15, 17];
     for i in v {
         tree.insert(i);
     }

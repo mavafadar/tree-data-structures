@@ -285,7 +285,7 @@ impl<T: Ord + Copy + Debug> RBTree<T> {
                 self.root = left.clone();
             }
             if let Some(node) = parent {
-                if Self::_is_left_child(node) {
+                if Self::_is_left_child(rotation_node) {
                     node.borrow_mut().left = left.clone();
                 } else {
                     node.borrow_mut().right = left.clone();
