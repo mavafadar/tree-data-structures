@@ -70,19 +70,19 @@ pub trait TreeNode<T: Ord + Copy + Debug> {
     fn traverse_preorder(&self) {
         println!("{:#?}", self.get_data());
         if let Some(left) = self.get_left() {
-            left.borrow().traverse_inorder();
+            left.borrow().traverse_preorder();
         }
         if let Some(right) = self.get_right() {
-            right.borrow().traverse_inorder();
+            right.borrow().traverse_preorder();
         }
     }
 
     fn traverse_postorder(&self) {
         if let Some(left) = self.get_left() {
-            left.borrow().traverse_inorder();
+            left.borrow().traverse_postorder();
         }
         if let Some(right) = self.get_right() {
-            right.borrow().traverse_inorder();
+            right.borrow().traverse_postorder();
         }
         println!("{:#?}", self.get_data());
     }
