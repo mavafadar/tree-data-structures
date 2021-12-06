@@ -115,6 +115,26 @@ pub trait Tree<T: Ord + Copy + Debug, TN: TreeNode<T>> {
 
     fn print_tree(&self);
 
+    /// The height of the tree.
+    /// 
+    /// This function can be used in RBTree, AVLTree and BSTree.
+    /// 
+    /// Returns to the height.
+    /// 
+    /// # Examples
+    /// 
+    /// ```
+    /// use trees::rbtree::RBTree;
+    /// use crate::trees::base::Tree;
+    /// 
+    /// let mut tree = RBTree::new();
+    /// assert_eq!(tree.get_height(), 0);
+    /// 
+    /// tree.insert(1); 
+    /// tree.insert(0); 
+    /// tree.insert(2); 
+    /// assert_eq!(tree.get_height(), 2);
+    /// ```
     fn get_height(&self) -> u32 {
         match &self.get_root() {
             None => 0,
@@ -122,6 +142,26 @@ pub trait Tree<T: Ord + Copy + Debug, TN: TreeNode<T>> {
         }
     }
 
+    /// The minimum element of the tree.
+    /// 
+    /// This function can be used in RBTree, AVLTree and BSTree.
+    /// 
+    /// Returns to the minimum element.
+    /// 
+    /// # Examples
+    /// 
+    /// ```
+    /// use trees::rbtree::RBTree;
+    /// use crate::trees::base::Tree;
+    /// 
+    /// let mut tree = RBTree::new();
+    /// assert_eq!(tree.get_min(), None);
+    /// 
+    /// tree.insert(1); 
+    /// tree.insert(0); 
+    /// tree.insert(2); 
+    /// assert_eq!(tree.get_min(), Some(0));
+    /// ```
     fn get_min(&self) -> Option<T> {
         match &self.get_root() {
             None => None,
@@ -129,6 +169,26 @@ pub trait Tree<T: Ord + Copy + Debug, TN: TreeNode<T>> {
         }
     }
 
+    /// The maximum element of the tree.
+    /// 
+    /// This function can be used in RBTree, AVLTree and BSTree.
+    /// 
+    /// Returns to the maximum element.
+    /// 
+    /// # Examples
+    /// 
+    /// ```
+    /// use trees::rbtree::RBTree;
+    /// use crate::trees::base::Tree;
+    /// 
+    /// let mut tree = RBTree::new();
+    /// assert_eq!(tree.get_max(), None);
+    /// 
+    /// tree.insert(1); 
+    /// tree.insert(0); 
+    /// tree.insert(2); 
+    /// assert_eq!(tree.get_max(), Some(2));
+    /// ```
     fn get_max(&self) -> Option<T> {
         match &self.get_root() {
             None => None,
@@ -136,6 +196,22 @@ pub trait Tree<T: Ord + Copy + Debug, TN: TreeNode<T>> {
         }
     }
 
+    /// Returns the number of leaf nodes in the tree.
+    ///
+    /// This function can be used in RBTree, AVLTree and BSTree.
+    /// 
+    /// # Examples
+    ///
+    /// ```
+    /// use trees::rbtree::RBTree;
+    /// use crate::trees::base::Tree;
+    /// 
+    /// let mut tree = RBTree::new();
+    /// assert_eq!(tree.count_leaves(), 0);
+    /// tree.insert(1);
+    /// tree.insert(2);
+    /// assert_eq!(tree.count_leaves(), 1);
+    /// ```
     fn count_leaves(&self) -> u32 {
         match &self.get_root() {
             None => 0,
@@ -143,6 +219,21 @@ pub trait Tree<T: Ord + Copy + Debug, TN: TreeNode<T>> {
         }
     }
 
+    /// Returns the number of elements in the tree.
+    ///
+    /// This function can be used in RBTree, AVLTree and BSTree.
+    /// 
+    /// # Examples
+    ///
+    /// ```
+    /// use trees::rbtree::RBTree;
+    /// use crate::trees::base::Tree;
+    /// 
+    /// let mut tree = RBTree::new();
+    /// assert_eq!(tree.count_nodes(), 0);
+    /// tree.insert(1);
+    /// assert_eq!(tree.count_nodes(), 1);
+    /// ```
     fn count_nodes(&self) -> u32 {
         match &self.get_root() {
             None => 0,
@@ -150,6 +241,31 @@ pub trait Tree<T: Ord + Copy + Debug, TN: TreeNode<T>> {
         }
     }
 
+    /// Inorder traverse iterator of tree.
+    /// 
+    /// This function can be used in RBTree, AVLTree and BSTree.
+    /// 
+    /// # Examples
+    /// 
+    /// ```
+    /// use trees::rbtree::RBTree;
+    /// use crate::trees::base::Tree;
+    /// 
+    /// let mut tree= RBTree::new();
+    ///     let v=vec![1,2,3,4,5,6,7];
+    ///        for i in v {
+    ///            tree.insert(i);
+    ///        }
+    /// 
+    /// // Now we have a tree that looks like this:
+    /// //                  2
+    /// //               1     4
+    /// //                   3   6
+    /// //                      5 7
+    /// 
+    /// // And we should get the following sequence of its elements: 1, 2, 3, 4, 5, 6, 7
+    /// tree.traverse_inorder();
+    /// ```
     fn traverse_inorder(&self) {
         match &self.get_root() {
             None => return ,
@@ -157,6 +273,31 @@ pub trait Tree<T: Ord + Copy + Debug, TN: TreeNode<T>> {
         }
     }
 
+    /// Preorder traverse iterator of tree.
+    /// 
+    /// This function can be used in RBTree, AVLTree and BSTree.
+    /// 
+    /// # Examples
+    /// 
+    /// ```
+    /// use trees::rbtree::RBTree;
+    /// use crate::trees::base::Tree;
+    /// 
+    /// let mut tree= RBTree::new();
+    ///     let v=vec![1,2,3,4,5,6,7];
+    ///        for i in v {
+    ///            tree.insert(i);
+    ///        }
+    /// 
+    /// // Now we have a tree that looks like this:
+    /// //                  2
+    /// //               1     4
+    /// //                   3   6
+    /// //                      5 7
+    /// 
+    /// // And we should get the following sequence of its elements: 2, 1, 3, 4, 5, 6, 7
+    /// tree.traverse_preorder();
+    /// ```
     fn traverse_preorder(&self) {
         match &self.get_root() {
             None => return ,
@@ -164,6 +305,31 @@ pub trait Tree<T: Ord + Copy + Debug, TN: TreeNode<T>> {
         }
     }
 
+    /// Postorder traverse iterator of tree.
+    /// 
+    /// This function can be used in RBTree, AVLTree and BSTree.
+    /// 
+    /// # Examples
+    /// 
+    /// ```
+    /// use trees::rbtree::RBTree;
+    /// use crate::trees::base::Tree;
+    /// 
+    /// let mut tree= RBTree::new();
+    ///     let v=vec![1,2,3,4,5,6,7];
+    ///        for i in v {
+    ///            tree.insert(i);
+    ///        }
+    /// 
+    /// // Now we have a tree that looks like this:
+    /// //                  2
+    /// //               1     4
+    /// //                   3   6
+    /// //                      5 7
+    /// 
+    /// // And we should get the following sequence of its elements: 1, 3, 4, 5, 6, 7, 2
+    /// tree.traverse_postorder();
+    /// ```
     fn traverse_postorder(&self) {
         match &self.get_root() {
             None => return ,
@@ -171,6 +337,28 @@ pub trait Tree<T: Ord + Copy + Debug, TN: TreeNode<T>> {
         }
     }
 
+    /// Checks whether the tree contains an element with the specified value.
+    /// 
+    /// This function can be used in RBTree, AVLTree and BSTree.
+    /// 
+    /// # Examples
+    /// 
+    /// ```
+    /// use trees::rbtree::RBTree;
+    /// use crate::trees::base::Tree;
+    /// 
+    /// let mut tree = RBTree::new();
+    /// assert_eq!(tree.contains(1), false);
+    /// 
+    /// tree.insert(1); 
+    /// tree.insert(0); 
+    /// tree.insert(2); 
+    /// tree.insert(1);
+    /// 
+    /// assert!(tree.contains(2));
+    /// assert!(tree.contains(1));
+    /// assert!(!tree.contains(999));
+    /// ```
     fn contains(&self, value: T) -> bool {
         match &self.get_root() {
             None => false,
@@ -178,10 +366,27 @@ pub trait Tree<T: Ord + Copy + Debug, TN: TreeNode<T>> {
         }
     }
 
+    /// Сhecking if the tree is empty.
+    /// 
+    /// This function can be used in RBTree, AVLTree and BSTree.
+    /// 
+    /// # Examples
+    /// 
+    /// ```
+    /// use trees::rbtree::RBTree;
+    /// use crate::trees::base::Tree;
+    /// 
+    /// let mut tree = RBTree::new();
+    /// assert!(tree.is_empty());
+    /// 
+    /// tree.insert(1);
+    /// assert!(!tree.is_empty());
+    /// ```
     fn is_empty(&self) -> bool {
         match &self.get_root() {
             Some(_) => false,
             None => true,
         }
     }
+
 }

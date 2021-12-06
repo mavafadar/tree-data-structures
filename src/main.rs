@@ -4,22 +4,24 @@ mod bstree;
 mod base;
 
 use crate::base::{TreeNode, Tree};
+use rbtree::RBTree;
+use rbtree::RBTreeNode;
 
 fn main() {
-    let mut tree = rbtree::RBTree::new();
-    tree.insert(1);
-    tree.insert(2);
-    tree.insert(3);
-    tree.insert(4);
-    tree.insert(5);
-    tree.insert(6);
-    tree.insert(7);
-    tree.insert(8);
-    tree.delete(9);
+    let mut tree = RBTree::new();
+    let v=vec![1,2,3,4,5,6,7];
+    for i in v {
+        tree.insert(i);
+    }
+    let node = tree.get_root();
+    println!("The value of root is {}",node.as_ref().unwrap().borrow().key);
+    // tree.delete(9);
     //println!("The number of leaves: {}", tree.count_leaves());
     //println!("The height of tree: {}", tree.get_height());
     //println!("The tree is empty? {}", tree.is_empty());
-    //tree.traverse_inorder();
+    //tree.traverse_postorder();
     //println!();
     //tree.print_tree();
+    //tree.clear();
+    //println!("The number of leaves: {}", tree.count_leaves());
 }

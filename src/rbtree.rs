@@ -16,15 +16,21 @@ enum NodeColor {
 type RcRefcellRBTNode<T> = Rc<RefCell<RBTreeNode<T>>>;
 type OptionNode<T> = Option<RcRefcellRBTNode<T>>;
 
+/// RBTreeNode is a node in the RBTree.
+/// key is the value of the node.
+/// color is the color of the node, black or red.
 #[derive(Debug)]
 pub struct RBTreeNode<T: Ord + Copy + Debug> {
-    key: T,
+    pub key: T,
     color: NodeColor,
     parent: OptionNode<T>,
     left: OptionNode<T>,
     right: OptionNode<T>,
 }
 
+/// A red black tree is a kind of self-balancing binary search tree
+/// that can be used to store elements.
+/// The root node is the root node of the red black tree.
 #[derive(Debug)]
 pub struct RBTree<T: Ord + Copy + Debug> {
     root: OptionNode<T>,
@@ -100,6 +106,9 @@ impl<T: Ord + Copy + Debug> RBTreeNode<T> {
 
 
 impl<T: Ord + Copy + Debug> RBTree<T> {
+    /// Makes a new empty RBTree.
+    ///
+    /// Does not allocate anything on its own.
     pub fn new() -> Self {
         RBTree {
             root: None,
@@ -213,7 +222,7 @@ impl<T: Ord + Copy + Debug> RBTree<T> {
         return (false, parent);
     }
 
-    pub fn exists(&mut self, value: T) -> Result<(), String> {
+    fn exists(&mut self, value: T) -> Result<(), String> {
         match self.search(value) {
             (true, _) => Ok(()),
             (false, _) => Err(format!("The node doesn't exist.").to_string()),
@@ -302,7 +311,13 @@ impl<T: Ord + Copy + Debug> RBTree<T> {
         }
         return node;
     }
-    // find the replacement node to replace the delete node
+
+    // find the replacement node to replace the delete node 
+    /// Inorder predecessor of the element with the specified value
+    /// 
+    /// In Red-black Tree, inorder predecessor of an input node can be defined as 
+    /// the node with the greatest value smaller than the value of the input node.
+    /// 
     fn _find_replacement_node(node: &RcRefcellRBTNode<T>) -> OptionNode<T> {
         return if node.borrow().left.is_some() && node.borrow().right.is_some() {
             Self::_recur_right_child(node.borrow().left.clone())
@@ -482,13 +497,71 @@ impl<T: Ord + Copy + Debug> RBTree<T> {
         let condition_two: bool = node.borrow().right.is_some() && Self::_return_color(node.borrow().right.as_ref().unwrap()) == NodeColor::Red;
         condition_one || condition_two
     }
+
+    /// Clear the RBTree, removing all elements.
+    ///
+    /// # Examples
+    /// ```
+    /// use trees::rbtree::RBTree;
+    /// use crate::trees::base::Tree;
+    /// 
+    /// let mut tree = RBTree::new();
+    /// tree.insert(1);
+    /// tree.clear();
+    /// assert!(tree.is_empty());
+    /// ```
+    pub fn clear(&mut self) {
+        *self = RBTree::new();
+    }
 }
 
 impl<T: Ord + Copy + Debug> Tree<T, RBTreeNode<T>> for RBTree<T> {
+    /// Return the root node of the RBTree.
+    ///
+    /// # Examples
+    /// ```
+    /// use trees::rbtree::RBTree;
+    /// use crate::trees::base::Tree;
+    /// 
+    /// let mut tree = RBTree::new();
+    ///     let v=vec![1,2,3,4,5,6,7];
+    /// for i in v {
+    ///     tree.insert(i);
+    /// }
+    /// 
+    /// // The tree is like this.
+    /// // Root 2 Black
+    /// // |____ L 1 Black
+    /// // |____ R 4 Red
+    /// //       |____ L 3 Black
+    /// //       |____ R 6 Black
+    /// //             |____ L 5 Red
+    /// //             |____ R 7 Red
+    /// let node = tree.get_root();
+    /// println!("The value of root is {}",node.as_ref().unwrap().borrow().key);
+    /// assert_eq!(node.as_ref().unwrap().borrow().key, 2);
+    /// ```
     fn get_root(&self) -> &OptionNode<T> {
         &self.root
     }
 
+    /// Inserting a new element.
+    ///
+    /// # Examples
+    /// 
+    /// ```
+    /// use trees::rbtree::RBTree;
+    /// use crate::trees::base::Tree;
+    /// 
+    /// let mut tree = RBTree::new();
+    /// 
+    /// tree.insert(1);
+    /// tree.insert(2);
+    /// tree.insert(3);
+    /// tree.insert(4);
+    /// 
+    /// assert_eq!(tree.count_nodes(), 4);
+    /// ```
     fn insert(&mut self, value: T) {
         match self.is_empty() {
             true => { // 1. tree is empty
@@ -521,6 +594,31 @@ impl<T: Ord + Copy + Debug> Tree<T, RBTreeNode<T>> for RBTree<T> {
         }
     }
 
+    /// Remove the element with the target value.
+    /// 
+    /// If target is missing from the tree, print "The node of doesn't exist."
+    /// 
+    /// # Examples
+    /// 
+    /// ```
+    /// use trees::rbtree::RBTree;
+    /// use crate::trees::base::Tree;
+    /// 
+    /// let mut tree = RBTree::new();
+    ///     let v=vec![1,2,3,4,5,6,7];
+    ///        for i in v {
+    ///          tree.insert(i);
+    ///          }
+    /// 
+    /// assert_eq!(tree.count_nodes(), 7);
+    /// tree.delete(7);
+    /// assert_eq!(tree.count_nodes(), 6);
+    /// 
+    /// // If you try to delete a value that is missing from the tree, nothing will change
+    /// assert_eq!(tree.count_nodes(), 6);
+    /// tree.delete(99);
+    /// assert_eq!(tree.count_nodes(), 6);
+    /// ```
     fn delete(&mut self, value: T) {
         let (flag, searched_node) = self.search(value);
         match flag {
@@ -534,6 +632,27 @@ impl<T: Ord + Copy + Debug> Tree<T, RBTreeNode<T>> for RBTree<T> {
         };
     }
 
+    /// Print the RBTree.
+    ///
+    /// # Examples
+    /// ```
+    /// use trees::rbtree::RBTree;
+    /// use crate::trees::base::Tree;
+    /// 
+    /// let mut tree = RBTree::new();
+    /// let v=vec![1,2,3,4,5,6,7];
+    /// for i in v {
+    ///    tree.insert(i);
+    /// }
+    /// // The result is like this.
+    /// // Root 2 Black
+    /// // |____ L 1 Black
+    /// // |____ R 4 Red
+    /// //       |____ L 3 Black
+    /// //       |____ R 6 Black
+    /// //             |____ L 5 Red
+    /// //             |____ R 7 Red
+    /// ```
     fn print_tree(&self) {
         match &self.get_root() {
             None => println!("This tree is empty!"),
