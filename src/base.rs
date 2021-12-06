@@ -295,7 +295,7 @@ pub trait Tree<T: Ord + Copy + Debug, TN: TreeNode<T>> {
     /// //                   3   6
     /// //                      5 7
     /// 
-    /// // And we should get the following sequence of its elements: 2, 1, 3, 4, 5, 6, 7
+    /// // And we should get the following sequence of its elements: 2, 1, 4, 3, 6, 5, 7
     /// tree.traverse_preorder();
     /// ```
     fn traverse_preorder(&self) {
@@ -327,7 +327,7 @@ pub trait Tree<T: Ord + Copy + Debug, TN: TreeNode<T>> {
     /// //                   3   6
     /// //                      5 7
     /// 
-    /// // And we should get the following sequence of its elements: 1, 3, 4, 5, 6, 7, 2
+    /// // And we should get the following sequence of its elements: 1, 3, 5, 7, 6, 4, 2
     /// tree.traverse_postorder();
     /// ```
     fn traverse_postorder(&self) {
