@@ -505,6 +505,7 @@ impl<T: Ord + Copy + Debug> RBTree<T> {
     /// ```
     pub fn clear(&mut self) {
         *self = RBTree::new();
+        println!("Clear operation is complete!");
     }
 }
 
