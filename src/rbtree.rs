@@ -222,13 +222,6 @@ impl<T: Ord + Copy + Debug> RBTree<T> {
         return (false, parent);
     }
 
-    fn exists(&mut self, value: T) -> Result<(), String> {
-        match self.search(value) {
-            (true, _) => Ok(()),
-            (false, _) => Err(format!("The node doesn't exist.").to_string()),
-        }
-    }
-
     fn _is_left_child(node: &RcRefcellRBTNode<T>) -> bool {
         let child_node: Ref<RBTreeNode<T>> = node.borrow();
         let parent: &&RcRefcellRBTNode<T> = &child_node.parent.as_ref().unwrap();
