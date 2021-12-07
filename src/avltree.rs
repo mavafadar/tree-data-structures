@@ -309,4 +309,9 @@ impl<T: Ord + Copy + Debug> AVLTree<T> {
             _root: None
         }
     }
+    
+    pub fn clear(&mut self) {
+        *self = AVLTree::new();
+        println!("Clear operation is complete!");
+    }
 }
