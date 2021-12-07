@@ -209,4 +209,9 @@ impl<T:Ord + Copy +Debug> BSTree<T> {
             root:None,
         }
     }
+    
+    pub fn clear(&mut self) {
+        *self = BSTree::new();
+        println!("Clear operation is complete!");
+    }
 }
