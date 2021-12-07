@@ -87,18 +87,18 @@ pub trait TreeNode<T: Ord + Copy + Debug> {
         println!("{:#?}", self.get_data());
     }
 
-    fn contains(&self, value: T) -> bool {
+    fn contain(&self, value: T) -> bool {
         match self.get_data().cmp(&value) {
             Ordering::Greater => {
                 match self.get_left() {
                     None => false,
-                    Some(left) => left.borrow().contains(value),
+                    Some(left) => left.borrow().contain(value),
                 }
             }
             Ordering::Less => {
                 match self.get_right() {
                     None => false,
-                    Some(right) => right.borrow().contains(value),
+                    Some(right) => right.borrow().contain(value),
                 }
             }
             Ordering::Equal => true,
@@ -348,21 +348,21 @@ pub trait Tree<T: Ord + Copy + Debug, TN: TreeNode<T>> {
     /// use crate::trees::base::Tree;
     /// 
     /// let mut tree = RBTree::new();
-    /// assert_eq!(tree.contains(1), false);
+    /// assert_eq!(tree.contain(1), false);
     /// 
     /// tree.insert(1); 
     /// tree.insert(0); 
     /// tree.insert(2); 
     /// tree.insert(1);
     /// 
-    /// assert!(tree.contains(2));
-    /// assert!(tree.contains(1));
-    /// assert!(!tree.contains(999));
+    /// assert!(tree.contain(2));
+    /// assert!(tree.contain(1));
+    /// assert!(!tree.contain(999));
     /// ```
-    fn contains(&self, value: T) -> bool {
+    fn contain(&self, value: T) -> bool {
         match &self.get_root() {
             None => false,
-            Some(node) => node.borrow().contains(value),
+            Some(node) => node.borrow().contain(value),
         }
     }
 
