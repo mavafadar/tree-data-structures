@@ -567,7 +567,7 @@ impl<T: Ord + Copy + Debug> Tree<T, RBTreeNode<T>> for RBTree<T> {
             false => {
                 let (found, parent_option) = self.search(value);
                 match found {
-                    true => (println!("The node already exists.")), // 2. node already exists
+                    true => (println!("The node already exists in the tree.")), // 2. node already exists
                     false => {
                         // 3. insert node
                         let child_belongs_on_left: bool = value < parent_option.as_ref().unwrap().borrow().key;
