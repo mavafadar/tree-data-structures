@@ -43,6 +43,7 @@ impl <T: Ord + Copy + Debug> BSTreeNode<T> {
 
     fn insert(&mut self, value: T) {
         if self.key == value {
+            println!("The node already exists in the tree.");
             return
         }
         let new_node =
