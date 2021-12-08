@@ -618,7 +618,7 @@ impl<T: Ord + Copy + Debug> Tree<T, RBTreeNode<T>> for RBTree<T> {
         let (flag, searched_node) = self.search(value);
         match flag {
             false => {
-                println!("The node of value: {:#?} doesn't exist.",value);
+                println!("The node of value {:#?} doesn't exist.",value);
             }
             true => {
                 let mut searched_node_ref: &RcRefcellRBTNode<T> = searched_node.as_ref().unwrap();
