@@ -315,7 +315,7 @@ pub fn availabe_operations(){
 }
 
 pub fn welcome(){
-    println!("---------------------------------------- Trees Command Line Interface --------------------------------------------------\n");
+    println!("---------------------------------------- Welcome to our Trees Command Line Interface ----------------------------------------\n");
     println!("Available trees:\n- Red-Black Tree \n- AVL tree \n- Binary Search Tree \n");
     println!("Availabe operations: \n1- Insert \n2- Delete \n3- Count Leaves \n4- Count Nodes \n5- Height \n6- Maximum \n7- Minimum \n8- Empty \n9- Search \n10- Traverse \n11- Print \n12- Clear\n");
     println!("How to use the Command Line Interface: ");
