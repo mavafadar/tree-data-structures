@@ -1000,7 +1000,7 @@ The result shows that when size equals 1000, the binary search tree takes longer
 
 ### Red-black tree and AVL tree
 
-#### The benchmark cases
+#### The benchmark case 1
 
 ```rust
 for tree_size in (10,000, 40,000, 70,000, 100,000, 130,000) do:
@@ -1036,3 +1036,24 @@ This chart shows the relationship between function/parameter and iteration time.
 
 ![image-20211202222733237](C:\Users\aifei\AppData\Roaming\Typora\typora-user-images\image-20211202222733237.png)
 ![image-20211202222706597](C:\Users\aifei\AppData\Roaming\Typora\typora-user-images\image-20211202222706597.png)
+
+#### The benchmark case 2 (only test insertion)
+
+```rust
+for tree_size in (10,000, 40,000, 70,000, 100,000, 130,000) do:
+	Start by creating an empty tree.
+	Values with tree_size are inserted into the tree.
+end
+```
+
+#### Results
+
+For the results, we run the benchmark code ten times and take the average value
+
+|  Size   | Red-black Tree | AVL Tree  |
+| :-----: | :------------: | :-------: |
+| 10,000  |   2.1172 ms    | 3.2139 ms |
+| 40,000  |   9.1002 ms    | 15.925 ms |
+| 70,000  |   17.881 ms    | 28.895 ms |
+| 100,000 |   29.653 ms    | 40.550 ms |
+| 130,000 |   38.732 ms    | 53.955 ms |
