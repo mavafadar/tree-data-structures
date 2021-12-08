@@ -114,7 +114,7 @@ impl<T: Ord + Copy + Debug> AVLTreeNode<T> {
                         this_node.borrow_mut()._right = Self::insert(right, data);
                     }
                     Ordering::Equal => {
-                        println!("This node currently is in the tree!")
+                        println!("The node already exists in the tree.")
                     }
                 }
                 this_node
