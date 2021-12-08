@@ -307,7 +307,7 @@ pub fn availabe_operations(){
     println!("7) Minimum        - find the minimum value in the tree");
     println!("8) Empty          - check if the tree is empty");
     println!("9) Search         - check if the tree contains a certain value");
-    println!("10) Traverse      - traverse the tree (Inorder, Preorder, or Postorder");
+    println!("10) Traverse      - traverse the tree (Inorder, Preorder, or Postorder)");
     println!("11) Print         - print the tree");
     println!("12) Clear         - clear the tree, removing all elements.");
 
