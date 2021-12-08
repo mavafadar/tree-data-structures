@@ -473,16 +473,17 @@ impl<T: Ord + Copy + Debug> RBTree<T> {
         node.borrow_mut().color = color;
     }
 
-    fn _return_node_same_level(node: &RcRefcellRBTNode<T>) -> OptionNode<T> {
-        let borrowed_node: Ref<RBTreeNode<T>> = node.borrow();
+    fn _return_node_same_level(node:&RcRefcellRBTNode<T>)->OptionNode<T> {
+        let borrowed_node=node.borrow();
         if borrowed_node.parent.is_some() {
-            let parent_node: &Ref<RBTreeNode<T>> = &borrowed_node.parent.as_ref().unwrap().borrow();
-            match Self::_is_left_child(node) {
-                true => parent_node.right.clone(),
-                false => parent_node.left.clone(),
-            };
-        };
-        return None;
+            let parent_node=&borrowed_node.parent.as_ref().unwrap().borrow();
+            if Self::_is_left_child(node) {
+                return parent_node.right.clone()
+            }else {
+                return parent_node.left.clone()
+            }
+        }
+        return None
     }
 
     fn _has_red_child(node: &RcRefcellRBTNode<T>) -> bool {

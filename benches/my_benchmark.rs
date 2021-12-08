@@ -15,7 +15,7 @@ fn bench_rbtree(criterion: &mut Criterion) {
                     tree.insert(index);
                 }
                 for index in 0..size / 10 {
-                    tree.contains(index);
+                    tree.contain(index);
                 }
             })
         });
@@ -33,7 +33,7 @@ fn bench_bstree(criterion: &mut Criterion) {
                     tree.insert(index);
                 }
                 for index in 0..size / 10 {
-                    tree.contains(index);
+                    tree.contain(index);
                 }
             })
         });
@@ -51,7 +51,7 @@ fn bench_avl_tree(criterion: &mut Criterion) {
                     tree.insert(index);
                 }
                 for index in 0..size / 10 {
-                    tree.contains(index);
+                    tree.contain(index);
                 }
             })
         });

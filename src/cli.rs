@@ -249,7 +249,7 @@ fn bstree_cli() {
 pub fn start_cli(){
     loop {
         println!("You can select a tree number to start or type 'exit' to leave!");
-        println!("Select a tree!\n1- AVL Tree \n2- Red-Black Tree \n3- Binary Search Tree");
+        println!("Select a tree!\n1- Red-Black Tree \n2- AVL Tree \n3- Binary Search Tree");
         print!("input > ");
         let selected_tree_num = get_user_input();
 
@@ -280,7 +280,7 @@ pub fn get_user_input() -> String {
 
 pub fn get_value(oper: &str)-> i32 {
     loop {
-        print!("{} value > ", op);
+        print!("{} value > ", oper);
         let value = get_user_input();
         let trimmed_value = value.trim();
         match trimmed_value.parse::<i32>(){
