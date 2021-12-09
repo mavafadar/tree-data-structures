@@ -305,7 +305,7 @@ impl<T: Ord + Copy + Debug> RBTree<T> {
         return node;
     }
 
-    // find the replacement node to replace the delete node 
+    /// find the replacement node to replace the delete node
     /// Inorder predecessor of the element with the specified value
     /// 
     /// In Red-black Tree, inorder predecessor of an input node can be defined as 
@@ -635,7 +635,7 @@ impl<T: Ord + Copy + Debug> Tree<T, RBTreeNode<T>> for RBTree<T> {
     /// use crate::trees::base::Tree;
     /// 
     /// let mut tree = RBTree::new();
-    /// let v=vec![1,2,3,4,5,6,7];
+    /// let v=vec![1, 2, 3, 4, 5, 6, 7];
     /// for i in v {
     ///    tree.insert(i);
     /// }

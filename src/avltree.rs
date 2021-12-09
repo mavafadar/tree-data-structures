@@ -9,6 +9,9 @@ use crate::base::{TreeNode, Tree};
 type RcRefcellAVLNode<T> = Rc<RefCell<AVLTreeNode<T>>>;
 type OptionNode<T> = Option<RcRefcellAVLNode<T>>;
 
+/// AVLTreeNode is a node in the Tree (The base moduel).
+/// data is the value of the node.
+/// _height is the height of the node.
 #[derive(Debug)]
 pub struct AVLTreeNode<T: Ord + Copy + Debug> {
     pub data: T,
@@ -32,6 +35,9 @@ impl<T: Ord + Copy + Debug> TreeNode<T> for AVLTreeNode<T> {
 }
 
 impl<T: Ord + Copy + Debug> AVLTreeNode<T> {
+    /// Makes a new empty AVLTree.
+    ///
+    /// Does not allocate anything on its own.
     fn new(data: T) -> OptionNode<T> {
         Some(Rc::new(RefCell::new(AVLTreeNode {
             data,
@@ -62,12 +68,12 @@ impl<T: Ord + Copy + Debug> AVLTreeNode<T> {
         root.borrow_mut()._right = new_root.borrow()._left.clone().take();
         root.borrow_mut()._height = max(
             Self::_get_left_height(&root),
-            Self::_get_right_height(&root)
+            Self::_get_right_height(&root),
         ) + 1;
         new_root.borrow_mut()._left = Some(root);
         new_root.borrow_mut()._height = max(
             Self::_get_left_height(&new_root),
-            Self::_get_right_height(&new_root)
+            Self::_get_right_height(&new_root),
         ) + 1;
         new_root
     }
@@ -77,12 +83,12 @@ impl<T: Ord + Copy + Debug> AVLTreeNode<T> {
         root.borrow_mut()._left = new_root.borrow()._right.clone().take();
         root.borrow_mut()._height = max(
             Self::_get_left_height(&root),
-            Self::_get_right_height(&root)
+            Self::_get_right_height(&root),
         ) + 1;
         new_root.borrow_mut()._right = Some(root);
         new_root.borrow_mut()._height = max(
             Self::_get_left_height(&new_root),
-            Self::_get_right_height(&new_root)
+            Self::_get_right_height(&new_root),
         ) + 1;
         new_root
     }
@@ -140,7 +146,7 @@ impl<T: Ord + Copy + Debug> AVLTreeNode<T> {
         };
         new_return_node.borrow_mut()._height = max(
             Self::_get_left_height(&new_return_node),
-            Self::_get_right_height(&new_return_node)
+            Self::_get_right_height(&new_return_node),
         ) + 1;
         Some(new_return_node)
     }
@@ -197,7 +203,7 @@ impl<T: Ord + Copy + Debug> AVLTreeNode<T> {
         match return_node {
             None => {
                 return_node
-            },
+            }
             Some(this_node) => {
                 let balance_factor: i64 = Self::_get_balance_factor(&this_node);
                 let return_node: RcRefcellAVLNode<T> = match balance_factor {
@@ -223,7 +229,7 @@ impl<T: Ord + Copy + Debug> AVLTreeNode<T> {
                 };
                 return_node.borrow_mut()._height = max(
                     Self::_get_left_height(&return_node),
-                    Self::_get_right_height(&return_node)
+                    Self::_get_right_height(&return_node),
                 ) + 1;
                 Some(return_node)
             }
@@ -274,10 +280,51 @@ pub struct AVLTree<T: Ord + Copy + Debug> {
 }
 
 impl<T: Ord + Copy + Debug> Tree<T, AVLTreeNode<T>> for AVLTree<T> {
+    /// Return the root node of the RBTree.
+    ///
+    /// # Examples
+    /// ```
+    /// use trees::avltree::AVLTree;
+    /// use crate::trees::base::Tree;
+    ///
+    /// let mut tree = AVLTree::new();
+    ///     let v=vec![1,2,3,4,5,6,7];
+    /// for i in v {
+    ///     tree.insert(i);
+    /// }
+    ///
+    /// // Root 4
+    /// // |____ L 2
+    /// // |     |____ L 1
+    /// // |     |____ R 3
+    /// // |____ R 6
+    /// //       |____ L 5
+    /// //       |____ R 7
+    /// let node = tree.get_root();
+    /// println!("The value of root is {}", node.as_ref().unwrap().borrow().data);
+    /// assert_eq!(node.as_ref().unwrap().borrow().data, 4);
+    /// ```
     fn get_root(&self) -> &OptionNode<T> {
         &self._root
     }
 
+    /// Inserting a new element.
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// use trees::avltree::AVLTree;
+    /// use crate::trees::base::Tree;
+    ///
+    /// let mut tree = AVLTree::new();
+    ///
+    /// tree.insert(1);
+    /// tree.insert(2);
+    /// tree.insert(3);
+    /// tree.insert(4);
+    ///
+    /// assert_eq!(tree.count_nodes(), 4);
+    /// ```
     fn insert(&mut self, data: T) {
         if self.contain(data) == true {
             println!("This node already exists in the tree!");
@@ -289,6 +336,31 @@ impl<T: Ord + Copy + Debug> Tree<T, AVLTreeNode<T>> for AVLTree<T> {
         }
     }
 
+    /// Remove the element with the target value.
+    ///
+    /// If target is missing from the tree, print "This node does not exist in the tree!"
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// use trees::avltree::AVLTree;
+    /// use crate::trees::base::Tree;
+    ///
+    /// let mut tree = AVLTree::new();
+    ///     let v = vec![1, 2, 3, 4, 5, 6, 7];
+    ///        for i in v {
+    ///          tree.insert(i);
+    ///          }
+    ///
+    /// assert_eq!(tree.count_nodes(), 7);
+    /// tree.delete(7);
+    /// assert_eq!(tree.count_nodes(), 6);
+    ///
+    /// // If you try to delete a value that is missing from the tree, nothing will change
+    /// assert_eq!(tree.count_nodes(), 6);
+    /// tree.delete(99);
+    /// assert_eq!(tree.count_nodes(), 6);
+    /// ```
     fn delete(&mut self, data: T) {
         if self.contain(data) == false {
             println!("This node does not exist in the tree!");
@@ -300,6 +372,26 @@ impl<T: Ord + Copy + Debug> Tree<T, AVLTreeNode<T>> for AVLTree<T> {
         }
     }
 
+    /// Print the AVLTree.
+    ///
+    /// # Examples
+    /// ```
+    /// use trees::avltree::AVLTree;
+    /// use crate::trees::base::Tree;
+    ///
+    /// let mut tree = AVLTree::new();
+    /// let v = vec![1, 2, 3, 4, 5, 6, 7];
+    /// for i in v {
+    ///    tree.insert(i);
+    /// }
+    /// // Root 4
+    /// // |____ L 2
+    /// // |     |____ L 1
+    /// // |     |____ R 3
+    /// // |____ R 6
+    /// //       |____ L 5
+    /// //       |____ R 7
+    /// ```
     fn print_tree(&self) {
         match &self.get_root() {
             None => println!("This tree is empty!"),
@@ -319,7 +411,19 @@ impl<T: Ord + Copy + Debug> AVLTree<T> {
             _root: None
         }
     }
-    
+
+    /// Clear the AVLTree, removing all elements.
+    ///
+    /// # Examples
+    /// ```
+    /// use trees::avltree::AVLTree;
+    /// use crate::trees::base::Tree;
+    ///
+    /// let mut tree = AVLTree::new();
+    /// tree.insert(1);
+    /// tree.clear();
+    /// assert!(tree.is_empty());
+    /// ```
     pub fn clear(&mut self) {
         *self = AVLTree::new();
         println!("Clear operation is complete!");
