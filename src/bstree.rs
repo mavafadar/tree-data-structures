@@ -43,7 +43,7 @@ impl <T: Ord + Copy + Debug> BSTreeNode<T> {
 
     fn insert(&mut self, value: T) {
         if self.key == value {
-            println!("The node already exists in the tree.");
+            println!("The node already exists.");
             return
         }
         let new_node =
@@ -167,9 +167,10 @@ impl <T: Ord + Copy + Debug> Tree<T, BSTreeNode<T>> for BSTree<T> {
     }
 
     fn delete(&mut self, value:T){
-        if self.root.is_none() {
+        if self.root.is_none()||!self.contain(value) {
+            println!("The node of value {:#?} doesn't exist.",value);
             return ;
-        } else {
+        }else {
             if let Some(root) = self.root.as_ref() {
                 if root.borrow().key == value {
                     if root.borrow().left.is_none() && root.borrow().right.is_none() {

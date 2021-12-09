@@ -428,7 +428,12 @@ Operation >
           |____ L 3 Red
           |____ R 5 Red
     ```
-
+	If the tree is empty, the output is as follows:
+	
+	```rust
+	This tree is empty!
+	```
+	
 12. Select 12 to clear the tree and remove all elements.
 
     ```rust
@@ -760,7 +765,11 @@ Operation >
           |____ L 3
           |____ R 5
     ```
-
+	If the tree is empty, the output is as follows:
+	
+	```rust
+	This tree is empty!
+	```
 12. Select 12 to clear the tree and remove all elements.
 
     ```rust

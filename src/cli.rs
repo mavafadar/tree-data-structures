@@ -301,14 +301,14 @@ pub fn availabe_operations(){
     println!("1) Insert         - insert a node into the tree.");
     println!("2) Delete         - delete a node from the tree.");
     println!("3) Count Leaves   - count the number of leaves in the tree.");
-    println!("4) Count Nodes    - count the number of nodes in the tree");
-    println!("5) Height         - return the height of the tree");
-    println!("6) Maximum        - find the maximum value in the tree");
-    println!("7) Minimum        - find the minimum value in the tree");
-    println!("8) Empty          - check if the tree is empty");
-    println!("9) Search         - check if the tree contains a certain value");
+    println!("4) Count Nodes    - count the number of nodes in the tree.");
+    println!("5) Height         - return the height of the tree.");
+    println!("6) Maximum        - find the maximum value in the tree.");
+    println!("7) Minimum        - find the minimum value in the tree.");
+    println!("8) Empty          - check if the tree is empty.");
+    println!("9) Search         - check if the tree contains a certain value.");
     println!("10) Traverse      - traverse the tree (Inorder, Preorder, or Postorder)");
-    println!("11) Print         - print the tree");
+    println!("11) Print         - print the tree.");
     println!("12) Clear         - clear the tree, removing all elements.");
 
     println!("Back              - Go back to previous menu and erase current tree \n");
