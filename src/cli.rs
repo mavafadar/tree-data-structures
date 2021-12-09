@@ -9,7 +9,7 @@ use std::io::{stdin, stdout, Write};
 fn avltree_cli() {
     println!("\n------ AVL Tree branch ------\n");
     let mut tree = AVLTree::<i32>::new();
-    availabe_operations();
+    available_operations();
 
     loop {
         print!("Operation > ");
@@ -76,7 +76,7 @@ fn avltree_cli() {
             },            
             "11" => {tree.print_tree();},
             "12" => {tree.clear();},
-            "help" => availabe_operations(),
+            "help" => available_operations(),
             "back" => {
                 print!("\n");
                 return},
@@ -89,7 +89,7 @@ fn avltree_cli() {
 fn rbtree_cli() {
     println!("\n------ Red-Black Tree branch ------\n");
     let mut tree = RBTree::<i32>::new();
-    availabe_operations();
+    available_operations();
 
     loop {
         print!("Operation > ");
@@ -156,7 +156,7 @@ fn rbtree_cli() {
             },            
             "11" => {tree.print_tree();},
             "12" => {tree.clear();},
-            "help" => availabe_operations(),
+            "help" => available_operations(),
             "back" => {
                 print!("\n");
                 return},
@@ -169,7 +169,7 @@ fn rbtree_cli() {
 fn bstree_cli() {
     println!("\n------ Binary Search Tree branch ------\n");
     let mut tree = BSTree::<i32>::new();
-    availabe_operations();
+    available_operations();
 
     loop {
         print!("Operation > ");
@@ -236,7 +236,7 @@ fn bstree_cli() {
             },
             "11" => {tree.print_tree();},
             "12" => {tree.clear();},
-            "help" => availabe_operations(),
+            "help" => available_operations(),
             "back" => {
                 print!("\n");
                 return},
@@ -295,8 +295,8 @@ pub fn get_value(oper: &str)-> i32 {
     }
 }
 
-pub fn availabe_operations(){
-    println!("\nAvailabe Operations: \n------------------");
+pub fn available_operations(){
+    println!("\nAvailable Operations: \n------------------");
     println!("Enter the number corresponding to the operation you want to perform! \n");
     println!("1) Insert         - insert a node into the tree.");
     println!("2) Delete         - delete a node from the tree.");
@@ -317,7 +317,7 @@ pub fn availabe_operations(){
 pub fn welcome(){
     println!("---------------------------------------- Welcome to our Trees Command Line Interface ----------------------------------------\n");
     println!("Available trees:\n- Red-Black Tree \n- AVL tree \n- Binary Search Tree \n");
-    println!("Availabe operations: \n1- Insert \n2- Delete \n3- Count Leaves \n4- Count Nodes \n5- Height \n6- Maximum \n7- Minimum \n8- Empty \n9- Search \n10- Traverse \n11- Print \n12- Clear\n");
+    println!("Available operations: \n1- Insert \n2- Delete \n3- Count Leaves \n4- Count Nodes \n5- Height \n6- Maximum \n7- Minimum \n8- Empty \n9- Search \n10- Traverse \n11- Print \n12- Clear\n");
     println!("How to use the Command Line Interface: ");
     println!("-------------------");
 }
