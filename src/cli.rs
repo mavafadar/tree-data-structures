@@ -41,7 +41,7 @@ fn avltree_cli() {
                     Some(min) => println!("Minimum Value: {:?}", min),
                 }
             },
-            "8" => println!("Is the tree empty?: {:?}", tree.is_empty()),
+            "8" => println!("Is the tree empty? {:?}", tree.is_empty()),
             "9" | "search" => {
                 let value = get_value("search");
                 println!("Value found? {:?}", tree.contain(value));
@@ -121,7 +121,7 @@ fn rbtree_cli() {
                     Some(min) => println!("Minimum Value: {:?}", min),
                 }
             },
-            "8" => println!("Is the tree empty?: {:?}", tree.is_empty()),
+            "8" => println!("Is the tree empty? {:?}", tree.is_empty()),
             "9" | "search" => {
                 let value = get_value("search");
                 println!("Value found? {:?}", tree.contain(value));
@@ -201,7 +201,7 @@ fn bstree_cli() {
                     Some(min) => println!("Minimum Value: {:?}", min),
                 }
             },
-            "8" => println!("Is the tree empty?: {:?}", tree.is_empty()),
+            "8" => println!("Is the tree empty? {:?}", tree.is_empty()),
             "9" | "search" => {
                 let value = get_value("search");
                 println!("Value found? {:?}", tree.contain(value));
