@@ -11,6 +11,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d696f59e-5e23-4dcf-991b-7a7f9eb22022" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/avltree.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/avltree.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +62,11 @@
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="RustProjectSettings">
     <option name="toolchainHomeDirectory" value="$USER_HOME$/.cargo/bin" />
@@ -80,6 +87,8 @@
       <workItem from="1638784482582" duration="1448000" />
       <workItem from="1638786667532" duration="53000" />
       <workItem from="1638786755777" duration="36000" />
+      <workItem from="1639044978207" duration="7000" />
+      <workItem from="1639045009313" duration="1551000" />
     </task>
     <servers />
   </component>

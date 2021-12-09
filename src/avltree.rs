@@ -113,9 +113,7 @@ impl<T: Ord + Copy + Debug> AVLTreeNode<T> {
                         let right: OptionNode<T> = this_node.borrow()._right.clone();
                         this_node.borrow_mut()._right = Self::insert(right, data);
                     }
-                    Ordering::Equal => {
-                        println!("The node already exists in the tree.")
-                    }
+                    Ordering::Equal => {}
                 }
                 this_node
             }
@@ -149,7 +147,9 @@ impl<T: Ord + Copy + Debug> AVLTreeNode<T> {
 
     fn delete(node: OptionNode<T>, data: T) -> OptionNode<T> {
         let return_node: OptionNode<T> = match node {
-            None => node,
+            None => {
+                node
+            }
             Some(this_node) => {
                 let node_data: T = this_node.borrow().data;
                 match node_data.cmp(&data) {
@@ -195,7 +195,9 @@ impl<T: Ord + Copy + Debug> AVLTreeNode<T> {
             }
         };
         match return_node {
-            None => return_node,
+            None => {
+                return_node
+            },
             Some(this_node) => {
                 let balance_factor: i64 = Self::_get_balance_factor(&this_node);
                 let return_node: RcRefcellAVLNode<T> = match balance_factor {
@@ -277,16 +279,24 @@ impl<T: Ord + Copy + Debug> Tree<T, AVLTreeNode<T>> for AVLTree<T> {
     }
 
     fn insert(&mut self, data: T) {
-        match self._root.take() {
-            Some(root) => self._root = AVLTreeNode::insert(Some(root), data),
-            None => self._root = AVLTreeNode::new(data),
+        if self.contain(data) == true {
+            println!("This node already exists in the tree!");
+        } else {
+            match self._root.take() {
+                Some(root) => self._root = AVLTreeNode::insert(Some(root), data),
+                None => self._root = AVLTreeNode::new(data),
+            }
         }
     }
 
     fn delete(&mut self, data: T) {
-        match self._root.take() {
-            Some(root) => self._root = AVLTreeNode::delete(Some(root), data),
-            None => return,
+        if self.contain(data) == false {
+            println!("This node does not exist in the tree!");
+        } else {
+            match self._root.take() {
+                Some(root) => self._root = AVLTreeNode::delete(Some(root), data),
+                None => return,
+            }
         }
     }
 
