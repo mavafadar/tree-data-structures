@@ -48,7 +48,7 @@ impl<T: Ord + Copy + Debug> AVLTreeNode<T> {
     }
 
     fn _get_height(node: Option<RcRefcellAVLNode<T>>) -> u32 {
-        node.map_or(0, |n| n.borrow()._height)
+        node.map_or(0, |this_node| this_node.borrow()._height)
     }
 
     fn _get_left_height(node: &RcRefcellAVLNode<T>) -> u32 {
