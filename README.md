@@ -333,7 +333,6 @@ Operation >
    search value >
    ```
 
-   Please enter the value you want to delete.
    
    We input 3 as an example. The output is as follows:
    
@@ -666,7 +665,6 @@ Operation >
    search value >
    ```
 
-   Please enter the value you want to delete.
    
    We input 3 as an example. The output is as follows:
    
