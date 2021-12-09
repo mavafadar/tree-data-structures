@@ -297,7 +297,7 @@ impl<T: Ord + Copy + Debug> RBTree<T> {
         left_node.borrow_mut().right = Some(rotation_node.clone());
     }
 
-    // recursive find the left child
+    // recursive find the right child
     fn _recur_right_child(node: OptionNode<T>) -> OptionNode<T> {
         if node.as_ref().unwrap().borrow().right.is_some() {
             return Self::_recur_right_child(node.as_ref().unwrap().borrow().right.clone());

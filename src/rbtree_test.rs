@@ -4,7 +4,7 @@ mod test {
     use crate::rbtree;
 
     #[test]
-    fn test_avl() {
+    fn test_rbtree() {
         let mut rb_tree: rbtree::RBTree<i32> = rbtree::RBTree::new();
         assert_eq!(rb_tree.get_height(), 0);
         assert_eq!(rb_tree.is_empty(), true);

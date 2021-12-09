@@ -4,7 +4,7 @@ mod test {
     use crate::bstree;
 
     #[test]
-    fn test_avl() {
+    fn test_bstree() {
         let mut bs_tree: bstree::BSTree<i32> = bstree::BSTree::new();
         assert_eq!(bs_tree.get_height(), 0);
         assert_eq!(bs_tree.is_empty(), true);

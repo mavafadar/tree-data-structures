@@ -1,3 +1,5 @@
+
+
 # <center>Design Document</center>
 
 Both the red-black tree and AVL tree are efficient data structures as they provide means to insert, delete, and search the structure in O(log n) time. This program aims to implement the two efficient data structures in Rust and adds new features for them.
@@ -58,15 +60,19 @@ There are also many practical applications to obtain the maximum and minimum val
 
 Red black tree and AVL tree are often used to store large-scale data. When analyzing these data, it is very important to obtain the total data. For example, calculate the average number and standard deviation.
 
-## Part 2: Current limitations
-------
-### 
 
-1. Red black and AVL trees currently do not support inserting duplicate numbers.
+
+## Part 2: Current limitations
+
+------
+In the group project file, the structure of the red black tree is set to u32. Therefore, we limit the input nodes to integers in the command line interface. 
+
+Our red black tree and AVL tree actually adopt generics, and they also support a variety of inputs such as letters and symbols.
 
 
 
 ## Part 3: User manual
+
 ------
 ### Operating environment
 
@@ -803,6 +809,394 @@ Operation >
     input >
     ```
 
+##### Binary Search Tree
+
+------
+In the welcome interface, please enter 3 to select the Binary Search tree.
+
+When you input 3, the output is as follows:
+
+```Rust
+------ Binary Search Tree branch ------
+
+
+Available Operations:
+------------------
+Enter the number corresponding to the operation you want to perform!
+
+1) Insert         - insert a node into the tree.
+2) Delete         - delete a node from the tree.
+3) Count Leaves   - count the number of leaves in the tree.
+4) Count Nodes    - count the number of nodes in the tree.
+5) Height         - return the height of the tree.
+6) Maximum        - find the maximum value in the tree.
+7) Minimum        - find the minimum value in the tree.
+8) Empty          - check if the tree is empty.
+9) Search         - check if the tree contains a certain value.
+10) Traverse      - traverse the tree (Inorder, Preorder, or Postorder)
+11) Print         - print the tree.
+12) Clear         - clear the tree, removing all elements.
+Back              - Go back to previous menu and erase current tree
+
+Operation >
+```
+
+1. Select 1 to insert a node into the tree.
+
+   ```rust
+   Operation > 1
+   ```
+
+   When you input 1, the output is as follows:
+
+   ```Rust
+   insert value > 
+   ```
+
+   Please enter the value you want to insert.
+
+   We input 1 as an example. The output is as follows:
+
+   ```rust
+   insert value > 1
+   The insert operation for '1' in the tree is complete!
+   ```
+
+   If the entered value already exists, the output is as follows:
+
+   ```rust
+   insert value > 1
+   The insert operation for '1' in the tree is complete!
+   The node already exists.
+   ```
+
+2. Select 2 to delete a node from the tree.
+
+   ```rust
+   Operation > 2
+   ```
+
+   When you input 2, the output is as follows:
+
+   ```rust
+   delete value >
+   ```
+
+   Please enter the value you want to delete.
+
+   We input 1 as an example. The output is as follows:
+
+   ```rust
+   delete value > 1
+   The delete operation for '1' in the tree is complete!
+   ```
+
+   If the value to delete does not exist, the output is as follows:
+
+   ```rust
+   delete value > 1
+   The delete operation for '1' in the tree is complete!
+   The node of value: 1 doesn't exist.
+   ```
+
+3. Select 3 to count the number of leaves in the tree.
+
+   ```rust
+   Operation > 3
+   ```
+
+   Suppose the nodes in the tree are 1, 2, 3, 4, 5.
+
+   ```rust
+   Root 1
+   |____ R 2
+         |____ R 3
+               |____ R 4      
+                     |____ R 5
+   ```
+   When you input 3, the output is as follows: 
+   ```rust
+   Number of leaves: 1
+   ```
+
+
+4. Select 4 to count the number of nodes in the tree.
+
+   ```rust
+   Operation > 4
+   ```
+
+   Suppose the nodes in the tree are 1, 2, 3, 4, 5.
+
+   ```rust
+   Root 1
+   |____ R 2
+         |____ R 3
+               |____ R 4      
+                     |____ R 5
+   ```
+
+   When you input 4, the output is as follows: 
+
+   ```rust
+   Number of nodes: 5
+   ```
+
+5. Select 5 to get the height of the tree.
+	
+    ```rust
+   Operation > 5
+   ```
+
+   Suppose the nodes in the tree are 1, 2, 3, 4, 5.
+
+   ```rust
+	Root 1
+   |____ R 2
+	      |____ R 3
+               |____ R 4      
+                     |____ R 5
+   ```
+
+	When you input 5, the output is as follows: 
+	
+	```rust
+	Height of the tree: 5
+	```
+	
+6. Select 6 to find the maximum value in the tree.
+
+   ```rust
+   Operation > 6
+   ```
+
+   Suppose the nodes in the tree are 1, 2, 3, 4, 5.
+
+   ```rust
+   Root 1
+   |____ R 2
+         |____ R 3
+               |____ R 4      
+                     |____ R 5
+   ```
+
+   When you input 6, the output is as follows: 
+
+   ```rust
+   Maximum Value: 5
+   ```
+
+7. Select 7 to find the minimum value in the tree.
+	
+   ```rust
+   Operation > 7
+   ```
+
+   Suppose the nodes in the tree are 1, 2, 3, 4, 5.
+
+   ```rust
+   Root 1
+   |____ R 2
+         |____ R 3
+               |____ R 4      
+                     |____ R 5
+   ```
+   
+   When you input 7, the output is as follows: 
+   
+   ```rust
+   Minimum Value: 1
+   ```
+   
+8. Select 8 to check if the tree is empty.
+	 ```rust
+   Operation > 8
+   ```
+
+   Suppose the nodes in the tree are 1, 2, 3, 4, 5.
+
+   ```rust
+	Root 1
+   |____ R 2
+	      |____ R 3
+               |____ R 4      
+                     |____ R 5
+   ```
+   
+	When you input 8, the output is as follows: 
+	
+	```rust
+	Is the tree empty?: false
+	```
+	
+	 If the tree is empty, the output is as follows:
+	
+	 ```rust
+	 Is the tree empty?: true
+	 ```
+	
+9. Select 9 to check if the tree contains a certain value.
+
+   ```rust
+   Operation > 9
+   ```
+
+   When you input 9, the output is as follows: 
+
+   ```rust
+   search value >
+   ```
+
+   Suppose the nodes in the tree are 1, 2, 3, 4, 5.
+
+   ```rust
+   Root 1
+   |____ R 2
+         |____ R 3
+               |____ R 4      
+                     |____ R 5
+   ```
+
+   We input 3 as an example. The output is as follows:
+
+   ```rust
+   search value > 3
+   The search operation for '3' in the tree is complete!
+   Value found? true
+   ```
+    When the value you entered does not exist, the ouput is as follows:
+
+   ```rust
+   search value > 6
+   The search operation for '6' in the tree is complete!
+   Value found? false
+   ```
+
+10. Select 10 to traverse the tree (Inorder, Preorder, or Postorder)
+
+    ```rust
+    Operation > 10
+    ```
+
+    When you input 10, the output is as follows: 
+
+    ```rust
+    Enter the number corresponding to the tree traversal type you want or type 'back' to select a different operation!
+    1-Inorder
+    2-Preorder
+    3-Postorder
+    input >
+    ```
+
+    Suppose the nodes in the tree are 1, 2, 3, 4, 5.
+
+    ```rust
+    Root 1
+    |____ R 2
+          |____ R 3
+                |____ R 4      
+                      |____ R 5
+    ```
+
+    When you enter 1, the output will be In-order traversal.
+
+    ```rust
+    input > 1
+    Your tree:
+    1
+    2
+    3
+    4
+    5
+    ```
+
+    When you enter 2, the output will be Pre-order traversal.
+
+    ```rust
+    input > 2
+    Your tree:
+    1
+    2
+    3
+    4
+    5
+    ```
+
+    When you enter 3, the output will be Post-order traversal.
+
+    ```rust
+    input > 3
+    Your tree:
+    5
+    4
+    3
+    2
+    1
+    ```
+
+11. Select 11 to print the tree.
+
+    ```rust
+    Operation > 11
+    ```
+
+    Suppose the nodes in the tree are 1, 2, 3, 4, 5.
+
+    ```rust
+	Root 1
+    |____ R 2
+	      |____ R 3
+                |____ R 4      
+                      |____ R 5
+    ```
+    
+    When you input 11, the output is as follows: 
+    
+    ```rust
+	Root 1
+	|____ R 2
+	      |____ R 3
+	            |____ R 4      
+	                  |____ R 5
+	```
+	If the tree is empty, the output is as follows:
+	
+	```rust
+	This tree is empty!
+	```
+	
+12. Select 12 to clear the tree and remove all elements.
+
+    ```rust
+    Operation > 12
+    ```
+
+    When you input 12, the output is as follows: 
+
+    ```rust
+    Operation > 12
+    Clear operation is complete!
+    ```
+
+    Enter 8 to check  if the tree is empty.
+
+    ```rust
+    Operation > 8
+    Is the tree empty?: true
+    ```
+
+13. Enter back to return to the previous menu.
+
+    ```rust
+    Operation > back
+    
+    You can select a tree number to start or type 'exit' to leave!
+    Select a tree!
+    1- Red-Black Tree
+    2- AVL Tree
+    3- Binary Search Tree
+    input >
+    ```
 
 #### Code Interface
 
@@ -890,7 +1284,18 @@ type OptionNode<T> = Option<RcRefcellRBTNode<T>>;
 
    For example, if we insert 1,2,3,4,5,6,7,8. You should see output similar to the following:
 
-   ![image-20211129111247414](C:\Users\aifei\AppData\Roaming\Typora\typora-user-images\image-20211129111247414.png)
+   ```rust
+   Root 4 Black
+   |____ L 2 Red
+   |     |____ L 1 Black
+   |     |____ R 3 Black
+   |____ R 6 Red
+         |____ L 5 Black
+         |____ R 7 Black
+               |____ R 8 Red
+   ```
+   
+   
 
 ##### 				AVL Tree
 
@@ -976,9 +1381,19 @@ type OptionNode<T> = Option<RcRefcellAVLNode<T>>;
 
    For example, if we insert 1,2,3,4,5,6,7,8. You should see output similar to the following:
 
+   ```rust
+   Root 4
+   |____ L 2
+   |     |____ L 1
+   |     |____ R 3
+   |____ R 6
+         |____ L 5
+         |____ R 7
+               |____ R 8
+   ```
    
    
-   ![image-20211202215418250](C:\Users\aifei\AppData\Roaming\Typora\typora-user-images\image-20211202215418250.png)
+   
 
 ## Part 4: Performance
 ------
@@ -1007,7 +1422,7 @@ The result shows that when size equals 1000, the binary search tree takes longer
 
 ### Red-black tree and AVL tree
 
-#### The benchmark case 1
+#### The benchmark case 1 (Insertion and Search)
 
 ```rust
 for tree_size in (10,000, 40,000, 70,000, 100,000, 130,000) do:
@@ -1029,7 +1444,7 @@ For the results, we run the benchmark code ten times and take the average value
 | 100,000 |   32.948 ms    | 42.683 ms |
 | 130,000 |   40.769 ms    | 62.057 ms |
 
-#### Line Chart
+##### Line Chart
 
 This chart shows the mean measured time for each function as the input (or the size of the input) increases.
 
@@ -1037,7 +1452,7 @@ This chart shows the mean measured time for each function as the input (or the s
 
 ![image-20211202222530408](C:\Users\aifei\AppData\Roaming\Typora\typora-user-images\image-20211202222530408.png)
 
-#### Violin Plot
+##### Violin Plot
 
 This chart shows the relationship between function/parameter and iteration time. The thickness of the shaded region indicates the probability that a measurement of the given function/parameter would take a particular length of time.
 
@@ -1064,3 +1479,54 @@ For the results, we run the benchmark code ten times and take the average value
 | 70,000  |   17.881 ms    | 28.895 ms |
 | 100,000 |   29.653 ms    | 40.550 ms |
 | 130,000 |   38.732 ms    | 53.955 ms |
+
+##### Line Chart
+
+![lines](D:\Projects\Rust\Projects\ECE-522-project\target\criterion\rbtree_test_insertion\report\lines.svg)
+
+![lines](D:\Projects\Rust\Projects\ECE-522-project\target\criterion\avltree_test_insertion\report\lines.svg)
+
+##### Violin Plot
+
+![violin](D:\Projects\Rust\Projects\ECE-522-project\target\criterion\rbtree_test_insertion\report\violin.svg)
+
+![violin](D:\Projects\Rust\Projects\ECE-522-project\target\criterion\avltree_test_insertion\report\violin.svg)
+
+#### The benchmark case 3 (only test search)
+
+```rust
+tree_size=130,000
+for search_size in (10,000, 40,000, 70,000, 100,000, 130,000, 200,000) do:
+	A search is conducted for the (search_size/10) lowest values.
+end
+```
+
+#### Results
+
+For the results, we run the benchmark code and take the average value
+
+| Search_Size | Red-black Tree | AVL Tree  |
+| :---------: | :------------: | :-------: |
+|    10,00    |   61.541 us    | 63.697 us |
+|    40,00    |   243.66 us    | 261.16 us |
+|    70,00    |   438.51 us    | 471.42 us |
+|   100,00    |   707.31 us    | 663.49 us |
+|   130,00    |   874.21 us    | 867.40 us |
+|   200,00    |   1.4347 ms    | 1.3331 ms |
+
+##### Line Chart
+
+![lines](D:\Projects\Rust\Projects\ECE-522-project\target\criterion\rbtree_test_search\report\lines.svg)
+
+![lines](D:\Projects\Rust\Projects\ECE-522-project\target\criterion\avltree_test_search\report\lines.svg)
+
+##### Violin Plot
+
+![violin](D:\Projects\Rust\Projects\ECE-522-project\target\criterion\rbtree_test_search\report\violin.svg)
+![violin](D:\Projects\Rust\Projects\ECE-522-project\target\criterion\avltree_test_search\report\violin.svg)
+
+### Conclusion
+
+When storing large-scale data, both red black tree and AVL tree perform better than the basic binary search tree.
+
+In the insertion operation, the red black tree performs better. In the search operation, when the amount of data is large, the AVL tree performs better.
