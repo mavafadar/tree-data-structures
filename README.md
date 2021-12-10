@@ -2,9 +2,13 @@
 
 # <center>Design Document</center>
 
+ECE 522: Software Construction, Verification and Evolution
+
 Both the red-black tree and AVL tree are efficient data structures as they provide means to insert, delete, and search the structure in O(log n) time. This program aims to implement the two efficient data structures in Rust and adds new features for them.
 
-This program is written by Ahmed Al Dallal, Mohammad Amin Vafadar and Pengfei Gao.
+This program is written by Ahmed Al Dallal, Mohammad Amin Vafadar and Pengfei Gao. (Group 1)
+
+9 - December - 2021
 
 If you want more information for the program, click [here](https://github.com/mavafadar/ECE-522-project).
 
