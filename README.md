@@ -334,13 +334,13 @@ Operation >
    ![image-20211208130713357](C:\Users\aifei\AppData\Roaming\Typora\typora-user-images\image-20211208130713357.png)
 
    ```rust
-   Is the tree empty?: false
+   Is the tree empty? false
    ```
    
 	 If the tree is empty, the output is as follows:
 	
 	 ```rust
-	 Is the tree empty?: true
+	 Is the tree empty? true
 	 ```
 	
 9. Select 9 to check if the tree contains a certain value.
@@ -473,7 +473,7 @@ Operation >
 
     ```rust
     Operation > 8
-    Is the tree empty?: true
+    Is the tree empty? true
     ```
 
 13. Enter back to return to the previous menu.
@@ -671,13 +671,13 @@ Operation >
    ![image-20211208142014224](C:\Users\aifei\AppData\Roaming\Typora\typora-user-images\image-20211208142014224.png)
 
    ```rust
-   Is the tree empty?: false
+   Is the tree empty? false
    ```
    
 	 If the tree is empty, the output is as follows:
 	
 	 ```rust
-	 Is the tree empty?: true
+	 Is the tree empty? true
 	 ```
 	
 9. Select 9 to check if the tree contains a certain value.
@@ -809,7 +809,7 @@ Operation >
 
     ```rust
     Operation > 8
-    Is the tree empty?: true
+    Is the tree empty? true
     ```
 
 13. Enter back to return to the previous menu.
@@ -1042,13 +1042,13 @@ Operation >
 	When you input 8, the output is as follows: 
 	
 	```rust
-	Is the tree empty?: false
+	Is the tree empty? false
 	```
 	
 	 If the tree is empty, the output is as follows:
 	
 	 ```rust
-	 Is the tree empty?: true
+	 Is the tree empty? true
 	 ```
 	
 9. Select 9 to check if the tree contains a certain value.
@@ -1198,7 +1198,7 @@ Operation >
 
     ```rust
     Operation > 8
-    Is the tree empty?: true
+    Is the tree empty? true
     ```
 
 13. Enter back to return to the previous menu.
