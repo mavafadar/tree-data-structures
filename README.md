@@ -54,7 +54,7 @@ Our 2-minute video highlighting the new system can be found [here](https://drive
 
 ------
 <p align = "justify"> 
-##### Pre-order and Post-order traversal
+Pre-order and Post-order traversal
 </p>
 <p align = "justify"> 
 The Red-black tree and AVL tree are data structures based on binary trees. Pre-order traversal and post-order traversal are the two most common types of binary tree traversals. **Pre-order** traversal is mainly used when a tree needs to be duplicated. The feature of **Post-order** traversal is that the left and right child nodes of the node must have been traversed during operation, so it is suitable for destructive operations, such as deleting all nodes.
