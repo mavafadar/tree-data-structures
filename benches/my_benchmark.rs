@@ -125,5 +125,5 @@ fn bench_rbtree_search(criterion: &mut Criterion) {
     group.finish();
 }
 //criterion_group!(benches, bench_rbtree_search, bench_avl_tree_search);
-criterion_group!(benches, bench_rbtree_insertion, bench_avl_tree_insertion);
+criterion_group!(benches, bench_rbtree_insertion, bench_avl_tree_insertion, bench_rbtree_search, bench_avl_tree_search, bench_bstree, bench_rbtree, bench_avl_tree);
 criterion_main!(benches);
