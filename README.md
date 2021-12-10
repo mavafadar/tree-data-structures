@@ -1,11 +1,27 @@
 
 
 # <center>Design Document</center>
+
 <p align = "justify"> 
 Both the red-black tree and AVL tree are efficient data structures as they provide means to insert, delete, and search the structure in O(log n) time. This program aims to implement the two efficient data structures in Rust and adds new features for them. 
 This program is written by Ahmed Al Dallal, Mohammad Amin Vafadar and Pengfei Gao.
 If you want more information for the program, click [here](https://github.com/mavafadar/ECE-522-project). 
 </p>
+
+
+ECE 522: Software Construction, Verification and Evolution
+<p align = "justify"> 
+Both the red-black tree and AVL tree are efficient data structures as they provide means to insert, delete, and search the structure in O(log n) time. This program aims to implement the two efficient data structures in Rust and adds new features for them.
+</p>
+<p align = "justify"> 
+This program is written by Ahmed Al Dallal, Mohammad Amin Vafadar and Pengfei Gao. (Group 1)
+</p>
+9 - December - 2021
+
+If you want more information for the program, click [here](https://github.com/mavafadar/ECE-522-project).
+
+Our 2-minute video highlighting the new system can be found [here](https://drive.google.com/file/d/1ZRusCmNnQQ_bN7y_cmp0q8gA4Gg3kNw9/view?usp=sharing).
+
 
 ## Contents
 
@@ -367,13 +383,13 @@ Operation >
    ![image-20211208130713357](C:\Users\aifei\AppData\Roaming\Typora\typora-user-images\image-20211208130713357.png)
 
    ```rust
-   Is the tree empty?: false
+   Is the tree empty? false
    ```
    
 	 If the tree is empty, the output is as follows:
 	
 	 ```rust
-	 Is the tree empty?: true
+	 Is the tree empty? true
 	 ```
 	
 9. Select 9 to check if the tree contains a certain value.
@@ -506,7 +522,7 @@ Operation >
 
     ```rust
     Operation > 8
-    Is the tree empty?: true
+    Is the tree empty? true
     ```
 
 13. Enter back to return to the previous menu.
@@ -704,13 +720,13 @@ Operation >
    ![image-20211208142014224](C:\Users\aifei\AppData\Roaming\Typora\typora-user-images\image-20211208142014224.png)
 
    ```rust
-   Is the tree empty?: false
+   Is the tree empty? false
    ```
    
 	 If the tree is empty, the output is as follows:
 	
 	 ```rust
-	 Is the tree empty?: true
+	 Is the tree empty? true
 	 ```
 	
 9. Select 9 to check if the tree contains a certain value.
@@ -842,7 +858,7 @@ Operation >
 
     ```rust
     Operation > 8
-    Is the tree empty?: true
+    Is the tree empty? true
     ```
 
 13. Enter back to return to the previous menu.
@@ -1075,13 +1091,13 @@ Operation >
 	When you input 8, the output is as follows: 
 	
 	```rust
-	Is the tree empty?: false
+	Is the tree empty? false
 	```
 	
 	 If the tree is empty, the output is as follows:
 	
 	 ```rust
-	 Is the tree empty?: true
+	 Is the tree empty? true
 	 ```
 	
 9. Select 9 to check if the tree contains a certain value.
@@ -1231,7 +1247,7 @@ Operation >
 
     ```rust
     Operation > 8
-    Is the tree empty?: true
+    Is the tree empty? true
     ```
 
 13. Enter back to return to the previous menu.
