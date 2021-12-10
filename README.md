@@ -1,12 +1,11 @@
 
 
 # <center>Design Document</center>
-
-Both the red-black tree and AVL tree are efficient data structures as they provide means to insert, delete, and search the structure in O(log n) time. This program aims to implement the two efficient data structures in Rust and adds new features for them.
-
+<p align = "justify"> 
+Both the red-black tree and AVL tree are efficient data structures as they provide means to insert, delete, and search the structure in O(log n) time. This program aims to implement the two efficient data structures in Rust and adds new features for them. 
 This program is written by Ahmed Al Dallal, Mohammad Amin Vafadar and Pengfei Gao.
-
 If you want more information for the program, click [here](https://github.com/mavafadar/ECE-522-project). 
+</p>
 
 ## Contents
 
@@ -43,49 +42,83 @@ If you want more information for the program, click [here](https://github.com/ma
 ### Detailed Rationale  
 
 ------
-
-**Pre-order** and **Post-order** traversal
-
+<p align = "justify"> 
+Pre-order and Post-order traversal
+</p>
+<p align = "justify"> 
 Red-black tree and AVL tree are data structures based on binary tree. Pre-order traversal and post-order traversal are the two most common types of binary tree traversal. **Pre-order** traversal is mainly used when a tree needs to be duplicated. The feature of **Post-order** traversal is that the left and right child nodes of the node must have been traversed during operation, so it is suitable for destructive operations, such as deleting all nodes.
+</p>
 
-Check the **existence of the node**
-
+<p align = "justify"> 
+Check the existence of the node
+</p>
+<p align = "justify"> 
 Both the insertion and deletion operations of the tree need to judge whether the node to be operated exists in the tree structure. We also need this function when benchmarking code.
+</p>
 
-**Maximum and Minimum value**
-
+<p align = "justify"> 
+Maximum and Minimum value
+</p>
+<p align = "justify"> 
 There are also many practical applications to obtain the maximum and minimum values of a set of data. For example, find employees with the longest working hours in the company, check the lowest and highest scores of this exam.
+</p>
 
-**The number of nodes**
-
+<p align = "justify"> 
+The number of nodes
+</p>
+<p align = "justify">
 Red black tree and AVL tree are often used to store large-scale data. When analyzing these data, it is very important to obtain the total data. For example, calculate the average number and standard deviation.
-
+</p>
 
 
 ## Part 2: Current limitations
 
 ------
+<p align = "justify"> 
 There are no errors, faults, defects, missing functionality, or limitations in our project that we are aware of.
-
+</p> 
 
 ## Part 3: Design Questions
 
 ------
+<p align = "justify"> 
 1. What does a red-black tree provide that cannot be accomplished with ordinary binary search trees?
+</p>
+
+<p align = "justify">
 In the worst-case scenario of continuously inserting or deleting values in either ascending or descending order in a binary search tree, the tree becomes unbalanced with nodes being entirely either on the right side or the left side of the tree. The time complexity for searching, deleting, and inserting in this worst-case scenario becomes O(n). Red-Black trees on the other hand are sometimes referred to as self-balancing trees, where whenever a new value is inserted or deleted, the tree is rebalanced, even if these values are continuously inserted or deleted ascending or descending order. As such, the time complexity of Red-Black trees for searching, deleting, and inserting should be O(log(n)). To summarize, Red-Black trees are more time efficient than binary search tree.
+</p>
 
+<p align = "justify"> 
 2. Please add a command-line interface (function main) to your crate to allow users to test it.
+</p>
+
+<p align = "justify">
 A command line interface has been successfully implemented where 3 different trees (Red-Black tree, AVL tree, and Binary Search tree) could be used with 14 different operations. The command line interface can be found in “CLI.rs” file and is called in the “main.rs” file.
+</p>
 
+<p align = "justify"> 
 3. Do you need to apply any kind of error handling in your system (e.g., panic macro, Option<T>, Result<T, E>, etc..)
+</p>
+<p align = "justify">
 The “Option” type is widely applied in our code.
+</p>
 
+<p align = "justify"> 
 4. What components do the Red-black tree and AVL tree have in common?
+</p>
+
+<p align = "justify">
 The common components we have between both tree types include getting the root of the tree, getting the left node, getting the right node, getting the data stored in a node, getting the height of the tree, getting the maximum and minimum values in the tree, counting the number of leaves and nodes in the tree, traversing the tree in in-order, pre-order, and post-order, searching for values in the tree, and checking if a tree is empty.
+</p>
 
+<p align = "justify"> 
 5. How do we construct our design to “allow it to be efficiently and effectively extended”? For example. Could your code be reused to build a 2-3-4 tree or B tree?
-In our “base.rs” files we have two public traits called “Tree” and “TreeNode” that could be used to accommodate different kinds of trees. In these two traits, we could make use of the common components, such as the ones mentioned in the previous question, between different kinds of trees, such as a 2-3-4 tree or B tree, and build them.
+</p>
 
+<p align = "justify"> 
+In our “base.rs” files we have two public traits called “Tree” and “TreeNode” that could be used to accommodate different kinds of trees. In these two traits, we could make use of the common components, such as the ones mentioned in the previous question, between different kinds of trees, such as a 2-3-4 tree or B tree, and build them.
+</p>
 
 ## Part 4: User manual
 
@@ -1542,7 +1575,10 @@ For the results, we run the benchmark code and take the average value
 ![violin](D:\Projects\Rust\Projects\ECE-522-project\target\criterion\avltree_test_search\report\violin.svg)
 
 ### Conclusion
-
+<p align = "justify"> 
 When storing large-scale data, both red black tree and AVL tree perform better than the basic binary search tree.
+</p>
 
+<p align = "justify"> 
 In the insertion operation, the red black tree performs better. In the search operation, when the amount of data is large, the AVL tree performs better.
+</p>
