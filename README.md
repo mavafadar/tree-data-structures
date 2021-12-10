@@ -65,13 +65,29 @@ Red black tree and AVL tree are often used to store large-scale data. When analy
 ## Part 2: Current limitations
 
 ------
-In the group project file, the structure of the red black tree is set to u32. Therefore, we limit the input nodes to integers in the command line interface. 
-
-Our red black tree and AVL tree actually adopt generics, and they also support a variety of inputs such as letters and symbols.
+There are no errors, faults, defects, missing functionality, or limitations in our project that we are aware of.
 
 
+## Part 3: Design Questions
 
-## Part 3: User manual
+------
+1. What does a red-black tree provide that cannot be accomplished with ordinary binary search trees?
+In the worst-case scenario of continuously inserting or deleting values in either ascending or descending order in a binary search tree, the tree becomes unbalanced with nodes being entirely either on the right side or the left side of the tree. The time complexity for searching, deleting, and inserting in this worst-case scenario becomes O(n). Red-Black trees on the other hand are sometimes referred to as self-balancing trees, where whenever a new value is inserted or deleted, the tree is rebalanced, even if these values are continuously inserted or deleted ascending or descending order. As such, the time complexity of Red-Black trees for searching, deleting, and inserting should be O(log(n)). To summarize, Red-Black trees are more time efficient than binary search tree.
+
+2. Please add a command-line interface (function main) to your crate to allow users to test it.
+A command line interface has been successfully implemented where 3 different trees (Red-Black tree, AVL tree, and Binary Search tree) could be used with 14 different operations. The command line interface can be found in “CLI.rs” file and is called in the “main.rs” file.
+
+3. Do you need to apply any kind of error handling in your system (e.g., panic macro, Option<T>, Result<T, E>, etc..)
+The “Option” type is widely applied in our code.
+
+4. What components do the Red-black tree and AVL tree have in common?
+The common components we have between both tree types include getting the root of the tree, getting the left node, getting the right node, getting the data stored in a node, getting the height of the tree, getting the maximum and minimum values in the tree, counting the number of leaves and nodes in the tree, traversing the tree in in-order, pre-order, and post-order, searching for values in the tree, and checking if a tree is empty.
+
+5. How do we construct our design to “allow it to be efficiently and effectively extended”? For example. Could your code be reused to build a 2-3-4 tree or B tree?
+In our “base.rs” files we have two public traits called “Tree” and “TreeNode” that could be used to accommodate different kinds of trees. In these two traits, we could make use of the common components, such as the ones mentioned in the previous question, between different kinds of trees, such as a 2-3-4 tree or B tree, and build them.
+
+
+## Part 4: User manual
 
 ------
 ### Operating environment
@@ -103,7 +119,7 @@ You will see the welcome page.
 There are three data structures you can use.
 
 ```rust
----------------------------------------- Trees Command Line Interface --------------------------------------------------
+---------------------------------------- Welcome to our Trees Command Line Interface --------------------------------------------------
 
 Available trees:
 - Red-Black Tree
@@ -1395,7 +1411,7 @@ type OptionNode<T> = Option<RcRefcellAVLNode<T>>;
    
    
 
-## Part 4: Performance
+## Part 5: Performance
 ------
 ### Binary search tree
 
