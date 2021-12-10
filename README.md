@@ -12,7 +12,7 @@ This program is written by Ahmed Al Dallal, Mohammad Amin Vafadar and Pengfei Ga
 
 If you want more information for the program, click [here](https://github.com/mavafadar/ECE-522-project).
 
-Our 2-minute video highlighting the new system can be found [here](https://drive.google.com/file/d/1ZRusCmNnQQ_bN7y_cmp0q8gA4Gg3kNw9/view?usp=sharing)
+Our 2-minute video highlighting the new system can be found [here](https://drive.google.com/file/d/1ZRusCmNnQQ_bN7y_cmp0q8gA4Gg3kNw9/view?usp=sharing).
 
 ## Contents
 
