@@ -54,7 +54,7 @@ Our 2-minute video highlighting the new system can be found [here](https://drive
 
 ------
 <p align = "justify"> 
-Pre-order and Post-order traversal
+##### Pre-order and Post-order traversal
 </p>
 <p align = "justify"> 
 The Red-black tree and AVL tree are data structures based on binary trees. Pre-order traversal and post-order traversal are the two most common types of binary tree traversals. **Pre-order** traversal is mainly used when a tree needs to be duplicated. The feature of **Post-order** traversal is that the left and right child nodes of the node must have been traversed during operation, so it is suitable for destructive operations, such as deleting all nodes.
@@ -163,7 +163,7 @@ You will see the welcome page.
 There are three data structures you can use.
 
 ```rust
----------------------------------------- Welcome to our Trees Command Line Interface --------------------------------------------------
+---------------------------------------- Welcome to our Trees Command Line Interface ----------------------------------------
 
 Available trees:
 - Red-Black Tree
@@ -282,7 +282,7 @@ Operation >
    ```rust
    delete value > 1
    The delete operation for '1' in the tree is complete!
-   The node of value: 1 doesn't exist.
+   The node of value 1 doesn't exist.
    ```
 
 3. Select 3 to count the number of leaves in the tree.
@@ -619,7 +619,7 @@ Operation >
    ```rust
    delete value > 1
    The delete operation for '1' in the tree is complete!
-   The node of value: 1 doesn't exist.
+   The node of value 1 doesn't exist.
    ```
 
 3. Select 3 to count the number of leaves in the tree.
@@ -956,7 +956,7 @@ Operation >
    ```rust
    delete value > 1
    The delete operation for '1' in the tree is complete!
-   The node of value: 1 doesn't exist.
+   The node of value 1 doesn't exist.
    ```
 
 3. Select 3 to count the number of leaves in the tree.
@@ -1478,7 +1478,7 @@ end
 | 1000 | 3.4898 ms |
 | 5000 | 99.200 ms |
 
-The result shows that when size equals 1000, the binary search tree takes longer time than the red black tree and AVL tree with 10000 data.
+The result shows that when the size equals 1000, the binary search tree takes longer time than the red black tree and AVL tree with 10000 data.
 
 ### Red-black tree and AVL tree
 
