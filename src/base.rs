@@ -268,7 +268,8 @@ pub trait Tree<T: Ord + Copy + Debug, TN: TreeNode<T>> {
     /// ```
     fn traverse_inorder(&self) {
         match &self.get_root() {
-            None => return ,
+            None => { println!("This tree is empty!");
+            return },
             Some(node) => node.borrow().traverse_inorder(),
         }
     }
@@ -300,7 +301,8 @@ pub trait Tree<T: Ord + Copy + Debug, TN: TreeNode<T>> {
     /// ```
     fn traverse_preorder(&self) {
         match &self.get_root() {
-            None => return ,
+            None => { println!("This tree is empty!");
+            return },
             Some(node) => node.borrow().traverse_preorder(),
         }
     }
@@ -332,7 +334,8 @@ pub trait Tree<T: Ord + Copy + Debug, TN: TreeNode<T>> {
     /// ```
     fn traverse_postorder(&self) {
         match &self.get_root() {
-            None => return ,
+            None => { println!("This tree is empty!");
+            return },
             Some(node) => node.borrow().traverse_postorder(),
         }
     }
