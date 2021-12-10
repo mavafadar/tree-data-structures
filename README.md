@@ -57,14 +57,14 @@ Our 2-minute video highlighting the new system can be found [here](https://drive
 Pre-order and Post-order traversal
 </p>
 <p align = "justify"> 
-Red-black tree and AVL tree are data structures based on binary tree. Pre-order traversal and post-order traversal are the two most common types of binary tree traversal. **Pre-order** traversal is mainly used when a tree needs to be duplicated. The feature of **Post-order** traversal is that the left and right child nodes of the node must have been traversed during operation, so it is suitable for destructive operations, such as deleting all nodes.
+The Red-black tree and AVL tree are data structures based on binary trees. Pre-order traversal and post-order traversal are the two most common types of binary tree traversals. **Pre-order** traversal is mainly used when a tree needs to be duplicated. The feature of **Post-order** traversal is that the left and right child nodes of the node must have been traversed during operation, so it is suitable for destructive operations, such as deleting all nodes.
 </p>
 
 <p align = "justify"> 
 Check the existence of the node
 </p>
 <p align = "justify"> 
-Both the insertion and deletion operations of the tree need to judge whether the node to be operated exists in the tree structure. We also need this function when benchmarking code.
+Both the insertion and deletion operations of the tree need to judge whether the node to be operated on exists in the tree structure. We also need this function when benchmarking the code.
 </p>
 
 <p align = "justify"> 
@@ -78,7 +78,7 @@ There are also many practical applications to obtain the maximum and minimum val
 The number of nodes
 </p>
 <p align = "justify">
-Red black tree and AVL tree are often used to store large-scale data. When analyzing these data, it is very important to obtain the total data. For example, calculate the average number and standard deviation.
+The Red-black tree and AVL tree are often used to store large-scale data. When analyzing these data, it is very important to obtain the total data. For example, calculate the average number and standard deviation.
 </p>
 
 
