@@ -1514,7 +1514,7 @@ This chart shows the mean measured time for each function as the input (or the s
 
 ##### Violin Plot
 
-This chart shows the relationship between function/parameter and iteration time. The thickness of the shaded region indicates the probability that a measurement of the given function/parameter would take a particular length of time.
+The violin plot is showing the relationship between the functions/parameters and the iteration time. The thickness of the shaded area is an indication of the probability that a measurement of the given functions/parameters would take a certain duration of time.
 
 ![image-20211202222733237](C:\Users\aifei\AppData\Roaming\Typora\typora-user-images\image-20211202222733237.png)
 ![image-20211202222706597](C:\Users\aifei\AppData\Roaming\Typora\typora-user-images\image-20211202222706597.png)
