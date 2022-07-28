@@ -71,7 +71,7 @@ Both the insertion and deletion operations of the tree need to judge whether the
 Maximum and Minimum value:
 </p>
 <p align = "justify"> 
-There are also many practical applications to obtain the maximum and minimum values of a set of data. For example, find employees with the longest working hours in the company, check the lowest and highest scores of this exam.
+There are also many practical applications to obtain the maximum and minimum values of a set of data. For example, find employees with the longest working hours in the company, and check the lowest and highest scores on this exam.
 </p>
 
 <p align = "justify"> 
@@ -97,7 +97,7 @@ There are no errors, faults, defects, missing functionality, or limitations in o
 </p>
 
 <p align = "justify">
-In the worst-case scenario of continuously inserting or deleting values in either ascending or descending order in a binary search tree, the tree becomes unbalanced with nodes being entirely either on the right side or the left side of the tree. The time complexity for searching, deleting, and inserting in this worst-case scenario becomes O(n). Red-Black trees on the other hand are sometimes referred to as self-balancing trees, where whenever a new value is inserted or deleted, the tree is rebalanced, even if these values are continuously inserted or deleted ascending or descending order. As such, the time complexity of Red-Black trees for searching, deleting, and inserting should be O(log(n)). To summarize, Red-Black trees are more time efficient than binary search tree.
+In the worst-case scenario of continuously inserting or deleting values in either ascending or descending order in a binary search tree, the tree becomes unbalanced with nodes being entirely either on the right side or the left side of the tree. The time complexity for searching, deleting, and inserting in this worst-case scenario becomes O(n). Red-Black trees on the other hand are sometimes referred to as self-balancing trees, where whenever a new value is inserted or deleted, the tree is rebalanced, even if these values are continuously inserted or deleted in ascending or descending order. As such, the time complexity of Red-Black trees for searching, deleting, and inserting should be O(log(n)). To summarize, Red-Black trees are more time efficient than binary search trees.
 </p>
 
 <p align = "justify"> 
@@ -140,7 +140,7 @@ In our “base.rs” files we have two public traits called “Tree” and “Tr
 
 - Rust 1.50.0 or newer
 
-  if you need help to install the Rust on your computer, please click the link below
+  if you need help installing Rust on your computer, please click the link below
 
   https://www.rust-lang.org/tools/install
 
@@ -152,7 +152,7 @@ In our “base.rs” files we have two public traits called “Tree” and “Tr
 
 ------
 
-First, please enter cargo run on the terminal.
+First, please enter "cargo run" on the terminal.
 
 ```rust
 cargo run
@@ -170,7 +170,7 @@ Available trees:
 - AVL tree
 - Binary Search Tree
 
-Availabe operations:
+Available operations:
 1- Insert
 2- Delete
 3- Count Leaves
@@ -206,7 +206,7 @@ When you input 1, the output is as follows:
 ------ Red-Black Tree branch ------
 
 
-Availabe Operations: 
+Available Operations: 
 ------------------
 Enter the number corresponding to the operation you want to perform!  
 
@@ -222,7 +222,7 @@ Enter the number corresponding to the operation you want to perform!
 10) Traverse      - traverse the tree (Inorder, Preorder, or Postorder
 11) Print         - print the tree
 12) Clear         - clear the tree, removing all elements.
-Back              - Go back to previous menu and erase current tree
+Back              - Go back to the previous menu and erase current tree
 
 Operation >
 ```
@@ -435,7 +435,7 @@ Operation >
     input >
     ```
 
-    Suppose the nodes in the tree are 1, 2, 3, 4, 5.
+    Suppose the nodes in the tree are 1, 2, 3, 4, and 5.
 
     ![image-20211208130713357](C:\Users\aifei\AppData\Roaming\Typora\typora-user-images\image-20211208130713357.png)
 
@@ -481,7 +481,7 @@ Operation >
     Operation > 11
     ```
 
-    Suppose the nodes in the tree are 1, 2, 3, 4, 5.
+    Suppose the nodes in the tree are 1, 2, 3, 4, and 5.
 
     ![image-20211208130713357](C:\Users\aifei\AppData\Roaming\Typora\typora-user-images\image-20211208130713357.png)
 
@@ -543,7 +543,7 @@ When you input 2, the output is as follows:
 ------ AVL Tree branch ------
 
 
-Availabe Operations:
+Available Operations:
 ------------------
 Enter the number corresponding to the operation you want to perform!
 
@@ -772,7 +772,7 @@ Operation >
     input >
     ```
 
-    Suppose the nodes in the tree are 1, 2, 3, 4, 5.
+    Suppose the nodes in the tree are 1, 2, 3, 4, and 5.
 
     ![image-20211208142028724](C:\Users\aifei\AppData\Roaming\Typora\typora-user-images\image-20211208142028724.png)
 
@@ -818,7 +818,7 @@ Operation >
     Operation > 11
     ```
 
-    Suppose the nodes in the tree are 1, 2, 3, 4, 5.
+    Suppose the nodes in the tree are 1, 2, 3, 4, and 5.
 
     ![image-20211208142036612](C:\Users\aifei\AppData\Roaming\Typora\typora-user-images\image-20211208142036612.png)
 
@@ -1124,7 +1124,7 @@ Operation >
    The search operation for '3' in the tree is complete!
    Value found? true
    ```
-    When the value you entered does not exist, the ouput is as follows:
+    When the value you entered does not exist, the output is as follows:
 
    ```rust
    search value > 6
@@ -1148,7 +1148,7 @@ Operation >
     input >
     ```
 
-    Suppose the nodes in the tree are 1, 2, 3, 4, 5.
+    Suppose the nodes in the tree are 1, 2, 3, 4, and 5.
 
     ```rust
     Root 1
@@ -1200,7 +1200,7 @@ Operation >
     Operation > 11
     ```
 
-    Suppose the nodes in the tree are 1, 2, 3, 4, 5.
+    Suppose the nodes in the tree are 1, 2, 3, 4, and 5.
 
     ```rust
 	Root 1
